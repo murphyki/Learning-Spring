@@ -12,7 +12,7 @@ Learning the spring core framework
 ####Download
 - Spring docs recommend using a dependency manager like maven or gradle
 but i downloaded zip file distribution from here:
-Spring distribution: http://maven.springframework.org/release/org/springframework/spring/4.0.6.RELEASE/
+	- Spring distribution: http://maven.springframework.org/release/org/springframework/spring/4.0.6.RELEASE/
 
 ####Books
 - Spring in Action
