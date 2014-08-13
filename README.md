@@ -6,8 +6,10 @@ Learning the spring core framework
 - http://www.tutorialspoint.com/spring/index.htm
 
 ####Youtube Videos
-- JavaBrains: https://www.youtube.com/playlist?list=PLC97BDEFDCDD169D7
-- Cave of Programming: https://www.youtube.com/watch?v=uVVZIHti3ME
+- JavaBrains
+	- https://www.youtube.com/playlist?list=PLC97BDEFDCDD169D7
+- Cave of Programming
+	- https://www.youtube.com/watch?v=uVVZIHti3ME
 
 ####Download
 - Spring docs recommend using a dependency manager like maven or gradle
