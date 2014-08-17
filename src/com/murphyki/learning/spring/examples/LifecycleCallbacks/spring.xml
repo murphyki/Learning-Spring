@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<!--
+	Number of options for implementing lifecycle methods:
+	1) Add lifecycle methods to the beans and use the init-method and destroy-method
+	attributes in the bean definition xml.
+	This is particular method in used by the point beans below. The method names
+	can be anything and the name is used as the value for the init-method and destroy-method
+	attributes.
+	2) Implement the spring interfaces InitializingBean and DisposableBean.
+	This is th emethod used in the Triangle bean below.
+	
+	NOTE for the cleanup/destroy methods to be called we need to use AbstractApplicationContext
+	and call AbstractApplicationContext.registerShutdownHook() which we do in the
+	Application class for this example.
+ -->
+<beans>
+	<bean id="triangle" class="com.murphyki.learning.spring.examples.LifecycleCallbacks.Triangle">
+		<property name="type" value="Scalene" />
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+	</bean>
+	
+	<bean id="pointA" init-method="init" destroy-method="cleanUp" class="com.murphyki.learning.spring.examples.LifecycleCallbacks.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="pointB" init-method="init" destroy-method="cleanUp" class="com.murphyki.learning.spring.examples.LifecycleCallbacks.Point">
+		<property name="x" value="10" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="pointC" init-method="init" destroy-method="cleanUp" class="com.murphyki.learning.spring.examples.LifecycleCallbacks.Point">
+		<property name="x" value="0" />
+		<property name="y" value="10" />
+	</bean>
+	
+</beans>
