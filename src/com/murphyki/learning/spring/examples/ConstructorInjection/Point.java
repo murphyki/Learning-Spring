@@ -1,4 +1,4 @@
-package com.murphyki.learning.spring.examples;
+package com.murphyki.learning.spring.examples.ConstructorInjection;
 
 public class Point {
 	private int x;
@@ -18,5 +18,10 @@ public class Point {
 	
 	public void setY(int y) {
 		this.y = y;
+	}
+	
+	@Override
+	public String toString() {
+		return "(" + this.x + ", " + this.y + ")";
 	}
 }

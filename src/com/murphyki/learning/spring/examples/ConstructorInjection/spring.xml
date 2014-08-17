@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle" class="com.murphyki.learning.spring.examples.ConstructorInjection.Triangle">
+		<property name="type" value="Scalene" />
+		<constructor-arg ref="pointA" />
+		<constructor-arg ref="pointB" />
+		<constructor-arg ref="pointC" />
+		<!-- 
+			Spring will resolve arguments into correct type and given order.
+			If order of arguments need to be specified use the 'index' attribute.
+			You might want to do this if order of args is ambigious.
+			<constructor-arg ref="pointA" index="0"/>
+			<constructor-arg ref="pointB" index="1" />
+			<constructor-arg ref="pointC" index="2" />
+		-->
+		
+	</bean>
+	
+	<bean id="pointA" class="com.murphyki.learning.spring.examples.ConstructorInjection.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="pointB" class="com.murphyki.learning.spring.examples.ConstructorInjection.Point">
+		<property name="x" value="10" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="pointC" class="com.murphyki.learning.spring.examples.ConstructorInjection.Point">
+		<property name="x" value="0" />
+		<property name="y" value="10" />
+	</bean>
+	
+</beans>
