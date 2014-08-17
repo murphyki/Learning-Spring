@@ -9,6 +9,8 @@ public class Triangle implements ApplicationContextAware {
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
+	
+	@SuppressWarnings("unused")
 	private ApplicationContext context;
 	
 	public Triangle() {
