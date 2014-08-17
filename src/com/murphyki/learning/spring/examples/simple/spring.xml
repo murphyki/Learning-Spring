@@ -3,8 +3,12 @@
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-
-<!-- bean definitions here -->
 	<bean id="triangle" class="com.murphyki.learning.spring.examples.Triangle">
+		<property name="type" value="Scalene" />
+		<!-- Can define a property this way as well... 
+			<property name="type">
+				<value>Scalene</value>
+			</property>
+		 -->
 	</bean>
 </beans>
