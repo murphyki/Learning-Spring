@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle" scope="prototype" class="com.murphyki.learning.spring.examples.BeanScopes.Triangle">
+		<property name="type" value="Scalene" />
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+	</bean>
+	
+	<!-- 
+		Bean scopes come in 4 flavours:
+		singleton (the default)
+		prototype
+		request
+		session
+		
+		request and session scopes are used in web apps.
+		singleton works similar to java singleton object - only one instance per container
+		prototype beans are created when requested via ApplicationContext.getBean()
+	 -->
+	<bean id="pointA" scope="singleton" class="com.murphyki.learning.spring.examples.BeanScopes.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="pointB" scope="prototype" class="com.murphyki.learning.spring.examples.BeanScopes.Point">
+		<property name="x" value="10" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="pointC" scope="prototype" class="com.murphyki.learning.spring.examples.BeanScopes.Point">
+		<property name="x" value="0" />
+		<property name="y" value="10" />
+	</bean>
+	
+</beans>
