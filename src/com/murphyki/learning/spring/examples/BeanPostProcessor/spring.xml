@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle" class="com.murphyki.learning.spring.examples.BeanPostProcessor.Triangle">
+		<property name="type" value="Scalene" />
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+	</bean>
+	
+	<bean id="pointA" class="com.murphyki.learning.spring.examples.BeanPostProcessor.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="pointB" class="com.murphyki.learning.spring.examples.BeanPostProcessor.Point">
+		<property name="x" value="10" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="pointC" class="com.murphyki.learning.spring.examples.BeanPostProcessor.Point">
+		<!-- Load properties from a properties file -->
+		<property name="x" value="${pointC.pointX}" />
+		<property name="y" value="${pointC.pointY}" />
+	</bean>
+	
+	<!-- Load BeanPostProcessors -->
+	<bean class="com.murphyki.learning.spring.examples.BeanPostProcessor.CustomBeanPostProcessor" />
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:/com/murphyki/learning/spring/examples/BeanPostProcessor/configurer.properties" />
+	</bean>
+</beans>
