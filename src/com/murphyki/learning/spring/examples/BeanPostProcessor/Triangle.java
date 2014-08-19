@@ -1,6 +1,5 @@
 package com.murphyki.learning.spring.examples.BeanPostProcessor;
 
-import org.springframework.beans.factory.config.BeanPostProcessor;
 
 public class Triangle {
 	private String type;
