@@ -32,4 +32,9 @@ public class Triangle {
 			System.out.println("Point=" + point);
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return this.type;
+	}
 }

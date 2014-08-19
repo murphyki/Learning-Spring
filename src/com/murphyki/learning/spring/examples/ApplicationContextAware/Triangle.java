@@ -57,6 +57,11 @@ public class Triangle implements ApplicationContextAware {
 	}
 
 	@Override
+	public String toString() {
+		return this.type;
+	}
+	
+	@Override
 	public void setApplicationContext(ApplicationContext context) throws BeansException {
 		System.out.println("Triangle.setApplicationContext called...");
 		this.context = context;

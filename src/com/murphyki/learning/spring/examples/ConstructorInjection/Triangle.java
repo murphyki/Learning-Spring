@@ -52,4 +52,9 @@ public class Triangle {
 		System.out.println("PointB=" + this.pointB);
 		System.out.println("PointC=" + this.pointC);
 	}
+	
+	@Override
+	public String toString() {
+		return this.type;
+	}
 }
