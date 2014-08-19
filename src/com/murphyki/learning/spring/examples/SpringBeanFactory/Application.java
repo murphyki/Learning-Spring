@@ -6,6 +6,7 @@ import org.springframework.core.io.FileSystemResource;
 
 public class Application {
 	public static void main(String[] args) {
+		@SuppressWarnings("deprecation")
 		BeanFactory factory = new XmlBeanFactory(new FileSystemResource(Application.class.getResource("spring.xml").getPath()));
 		Triangle triangle = (Triangle)factory.getBean("triangle");
 		triangle.draw();
