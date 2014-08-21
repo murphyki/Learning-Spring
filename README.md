@@ -19,4 +19,6 @@ but i downloaded zip file distribution from here:
 ####Books
 - Spring in Action
 	- Author: Craig Walls, Publisher: Manning Publications Co.
+- Spring Recipes
+	- Author: 	Gary Mak , Daniel Rubio , Josh Long, Publisher: Apress
 	
