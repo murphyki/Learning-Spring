@@ -21,9 +21,13 @@
 	</bean>
 	
 	<bean id="pointC" class="com.murphyki.learning.spring.examples.BeanFactoryPostProcessor.Point">
-		<property name="x" value="0" />
-		<property name="y" value="10" />
+		<!-- Load properties from a properties file -->
+		<property name="x" value="${pointC.pointX}" />
+		<property name="y" value="${pointC.pointY}" />
 	</bean>
 	
 	<bean class="com.murphyki.learning.spring.examples.BeanFactoryPostProcessor.CustomBeanFactoryPostProcessor" />
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:/com/murphyki/learning/spring/examples/BeanFactoryPostProcessor/configurer.properties" />
+	</bean>
 </beans>
